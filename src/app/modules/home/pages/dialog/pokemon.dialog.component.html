@@ -1,0 +1,209 @@
+<mat-drawer-container>
+  <mat-drawer>
+    <div class="grid-col span-md-6 span-lg-4 text-center">
+      <p><a rel="lightbox" href="https://img.pokemondb.net/artwork/large/bulbasaur.jpg"
+          data-title="Bulbasaur official artwork">
+          <picture>
+            <source srcset="https://img.pokemondb.net/artwork/avif/bulbasaur.avif" width="360" height="336"
+              type="image/avif">
+            <img src="https://img.pokemondb.net/artwork/bulbasaur.jpg" alt="Bulbasaur artwork by Ken Sugimori"
+              fetchpriority="high" width="360" height="336">
+          </picture>
+        </a></p>
+      <p class="text-small"><a href="/artwork/bulbasaur">Additional artwork</a></p>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+
+    <div id="main">
+      <div class="content-page">
+        <!-- Start content DashBoard-->
+        <div class="content">
+          <div class="container-fluid"> <!-- Clase de boostrap-->
+            <!-- begin row -->
+            <div class="row">
+              <div class="col-xl-10">
+                <div class="breadcrumb-holder">
+                  <h1 class="main-title float-left">Enpresas</h1>
+                  <ol class="breadcrumb float-right">
+                    <li class="breadcrumb-item">Pokedex</li>
+                    <li class="breadcrumb-item active">Pokemon</li>
+                  </ol>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+              <div class="col-xl-2">
+                <div class="form-group col-md-2" style="padding-left: 0px;">
+                  <!-- showSpinner:
+                              {{showSpinner}} -->
+                  <div class="card-body" style="padding-left: 0px;">
+                    <mat-spinner diameter="60" *ngIf="showSpinner"></mat-spinner>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end row -->
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="card mb-2"> <!-- Clase de boostrap-->
+
+                  <div class="form-row" style="padding-top: 20px;">
+                    <div class="form-group col-md-4">
+                      <div class="grid-col span-md-6 span-lg-4 text-center">
+                        <img class="mat-column-userimage" [src]="model.url_image_dream_worl" />
+                      </div>
+                    </div>
+                    <div class="form-group col-md-8">
+
+                      <!--
+                      <div class="grid-col span-md-6 span-lg-4 text-center">
+                        <img class="mat-column-userimage" [src]="model.url_image_dream_worl" />
+                      </div>
+                      <div class="grid-col span-md-6 span-lg-4 text-center">
+                        <img class="mat-column-userimage" [src]="model.url_image_dream_worl" />
+                      </div>
+                      <div class="grid-col span-md-6 span-lg-4 text-center">
+                        <img class="mat-column-userimage" [src]="model.url_image_dream_worl" />
+                      </div>
+                      -->
+                      <h2 style="text-align: center;"> Evolutions Chart </h2>
+                      <ul *ngFor="let pokemon of model.chain">
+                        <div class="form-group col-md-4">
+                          <h3>{{ pokemon.name }}</h3>
+                          <img class="mat-column-userimage-evo" [src]="pokemon.url_image_home" />
+                          ---->
+                        </div>
+                      </ul>
+
+                    </div>
+                  </div>
+
+
+                </div>
+
+                <div class="card mb-2"> <!-- Clase de boostrap-->
+
+                  <div class="form-row" style="padding-top: 20px;">
+
+                    <div class="form-group col-md-4">
+                      <div class="grid-col span-md-6 span-lg-4">
+                        <h2>Pokédex data</h2>
+                        <table class="vitals-table">
+                          <tbody>
+                            <tr>
+                              <th>National №</th>
+                              <td><strong>{{model.national}}</strong></td>
+                            </tr>
+                            <tr *ngFor="let typ of model.type">
+                              <th>Type</th>
+                              <td>
+                                <a class="type-icon type-grass">{{ typ }}</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>Species</th>
+                              <td>{{model.species}}</td>
+                            </tr>
+                            <tr>
+                              <th>Height</th>
+                              <td>{{model.height}}&nbsp;m </td>
+                            </tr>
+                            <tr>
+                              <th>Weight</th>
+                              <td>{{model.weight}}&nbsp;kg</td>
+                            </tr>
+                            <tr *ngFor="let ability of model.abilities">
+                              <th>Abilitie</th>
+                              <td>
+                                <a class="type-icon type-grass">{{ ability.ability.name }}</a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <div class="grid-col span-md-12 span-lg-8">
+                        <div id="dex-stats"></div>
+                        <h2>Base stats</h2>
+                        <div class="resp-scroll">
+                          <table class="vitals-table">
+                            <tbody>
+                              <tr>
+                                <th>HP</th>
+                                <td class="cell-num">{{model.hp}}</td>
+                                <td class="cell-barchart">
+                                  <div style="width:25.00%;" class="barchart-bar barchart-rank-2 "></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>Attack</th>
+                                <td class="cell-num">{{model.attack}}</td>
+                                <td class="cell-barchart">
+                                  <div style="width:27.22%;" class="barchart-bar barchart-rank-2 "></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>Defense</th>
+                                <td class="cell-num">{{model.defense}}</td>
+                                <td class="cell-barchart">
+                                  <div style="width:27.22%;" class="barchart-bar barchart-rank-2 "></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>Sp. Atk</th>
+                                <td class="cell-num">{{model.special_attack}}</td>
+                                <td class="cell-barchart">
+                                  <div style="width:36.11%;" class="barchart-bar barchart-rank-3 "></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>Sp. Def</th>
+                                <td class="cell-num">{{model.special_defense}}</td>
+                                <td class="cell-barchart">
+                                  <div style="width:36.11%;" class="barchart-bar barchart-rank-3 "></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>Speed</th>
+                                <td class="cell-num">{{model.speed}}</td>
+                                <td class="cell-barchart">
+                                  <div style="width:25.00%;" class="barchart-bar barchart-rank-2 "></div>
+                                </td>
+                              </tr>
+                            </tbody>
+                            <tfoot>
+                              <tr>
+                                <th>Total</th>
+                                <td class="cell-num cell-total">{{model.hp + model.attack + model.defense + model.special_attack + model.special_defense + model.speed}}</td>
+                                <th class="cell-barchart"></th>
+                              </tr>
+                            </tfoot>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+              </div>
+            </div>
+
+
+          </div>
+          <!-- END container-fluid -->
+        </div>
+        <!-- END content -->
+      </div>
+      <!-- END content-page -->
+    </div>
+    <!-- END main -->
+
+
+  </mat-drawer-content>
+</mat-drawer-container>

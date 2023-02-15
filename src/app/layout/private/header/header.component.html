@@ -1,0 +1,33 @@
+<mat-toolbar>
+  <mat-toolbar-row class="justify-content-between">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="row mr-0 ml-auto">
+      <ul class="row m-0 align-items-center">
+        <img src="assets/images/avatars/admin.png" alt="" class="user-pic" onclick="toggleMenu()">
+        <div class="sub-menu-wrap" id="subMenuUser">
+          <div class="sub-menu">
+            <div class="user-info">
+              <img src="assets/images/user.png" alt="" class="src">
+              <h2>James Aldrino</h2>
+            </div>
+            <hr>
+    
+            <a href="#" class="sub-menu-link">
+              <img src="assets/images/profile.png" alt="" class="src">
+              <p>Profile</p>
+              <span></span>
+            </a>
+            <a class="sub-menu-link" routerLink="../auth/login">
+              <img src="assets/images/profile.png" alt="" class="src">
+              <p>Logout</p>
+              <span></span>
+            </a>
+    
+          </div>
+        </div>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
