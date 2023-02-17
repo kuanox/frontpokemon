@@ -8,7 +8,7 @@ spec:
   ports:
   - port: 80
     # 80 normal service
-    targetPort: 3001
+    targetPort: 80
     protocol: TCP
     name: http
   selector:

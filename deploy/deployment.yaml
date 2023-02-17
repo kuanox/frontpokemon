@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         app: front-pokemon
-        tier: backend
+        tier: frontend
     spec:
       containers:
         #nombre del contenedor

@@ -32,5 +32,5 @@ COPY --from=build /dist/src/app/dist/pokemon /usr/share/nginx/html
 #COPY nginx/nginx.conf  /etc/nginx/conf.d/default.conf
 # Exposing a port, here it means that inside the container 
 # the app will be using Port 80 while running
-EXPOSE 3001
+EXPOSE 80
 #CMD ["nginx", "-g", "daemon off;"]
