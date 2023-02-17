@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUserServiceUrl: 'http://localhost:8081/api/v1/',
-  baseEmpresaServiceUrl: 'http://localhost:8080/api/v1/'
+  baseUserServiceUrl: 'http://35.202.173.151:8080/api/v1/',
+  basePokemonServiceUrl: 'http://35.202.173.151:8080/api/v1/'
 };
 
 /*

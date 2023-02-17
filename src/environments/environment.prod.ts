@@ -4,8 +4,8 @@
 
 export const environment = {
   production: true,
-  baseUserServiceUrl: 'http://remotehost:8081',
-  baseEmpresaServiceUrl: 'http://remotehost:8080'
+  baseUserServiceUrl: 'http://35.202.173.151:8080/api/v1/',
+  basePokemonServiceUrl: 'http://35.202.173.151:8080/api/v1/'
 };
 
 /*

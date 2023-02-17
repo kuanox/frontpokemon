@@ -1,0 +1,20 @@
+# Service configuration
+kind: Service
+apiVersion: v1
+metadata:
+  # Normal service name
+  name: front-pokemon-service
+spec:
+  ports:
+  - port: 80
+    # 80 normal service
+    targetPort: 3001
+    protocol: TCP
+    name: http
+  selector:
+    # Normal service name and tier
+    app: front-pokemon
+    # backend, frontend
+    tier: frontend
+  # LOCAL/INTERNAL: NodePort, GCP/EXTERNAL: LoadBalancer
+  type: LoadBalancer

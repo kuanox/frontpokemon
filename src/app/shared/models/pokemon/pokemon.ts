@@ -1,4 +1,4 @@
-import { Abilities } from "./Abilities";
+import { Abilities } from "./abilities";
 
 export class Pokemon {
     id: number;

@@ -1,0 +1,25 @@
+# POD - API configuration (with Google Endpoints)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-pokemon
+spec:
+  # Number of replicas
+  replicas: 1
+  selector:  
+   matchLabels:  
+    app: front-pokemon
+  template:
+    metadata:
+      labels:
+        app: front-pokemon
+        tier: backend
+    spec:
+      containers:
+        #nombre del contenedor
+      - name: front-pokemon
+        #ruta de imagen en container registry
+        image: gcr.io/jovial-duality-191812/apiusers/frontpokemon:0.1
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 80

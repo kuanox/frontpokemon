@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Pokemon } from 'src/app/shared/models/pokemon/pokemon';
 import { PageEvent } from '@angular/material/paginator';
 
-const baseUrl: string = environment.baseEmpresaServiceUrl + 'pokedex/';
+const baseUrl: string = environment.basePokemonServiceUrl + 'pokedex/';
 
 @Injectable({ providedIn: 'root' })
 export class PokedexService {
